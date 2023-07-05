@@ -22,9 +22,9 @@
   <ul class="running-chores">
     <%= for chore <- @running_chores do %>
     <li class="running-chore" id={chore.id}>
-      <%= live_component(ChoreItemComponent, chore: chore, download_live_path: @download_live_path, download_plug_path: @download_plug_path) %>
+      <.live_component id="chore-item" module={ChoreItemComponent} chore={chore} download_live_path={@download_live_path} download_plug_path={@download_plug_path} />
     </li>
     <% end %>
   </ul>
 </div>
-<%= live_component(ChoreModalComponent, chore: @selected_chore) %>
+<.live_component id="chore-modal" module={ChoreModalComponent} chore={@selected_chore} />
